@@ -1,39 +1,27 @@
-//import { useAnecdotes } from "./store"
+import { useEffect } from 'react'
 import AnecdoteForm from './AnecdoteForm'
 import AnecdoteList from './AnecdoteList'
+import Filter from './Filter'
+import Notification from './components/Notification.jsx'
+import { useAnecdoteActions } from "./store"
 
 const App = () => {
-  //const anecdotes = useAnecdotes()
+  const { initialize } = useAnecdoteActions()
 
-  // const vote = (id) => {
-  //   console.log("vote", id)
-  // }
+  useEffect(() => {
+    initialize()
+  }, [initialize])
 
   return (
     <div>
       <h2>Anecdotes</h2>
+      <Notification/>
+      <Filter />
+
       <AnecdoteList />
 
       <h2>create new</h2>
       <AnecdoteForm />
-
-
-      {/* {anecdotes.map((anecdote) => (
-        <div key={anecdote.id}>
-          <div>{anecdote.content}</div>
-          <div>
-            has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id)}>vote</button>
-          </div>
-        </div>
-      ))} */}
-      {/* <h2>create new</h2>
-      <form>
-        <div>
-          <input data-testid="new" />
-        </div>
-        <button>create</button>
-      </form> */}
     </div>
   )
 }
