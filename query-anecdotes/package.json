@@ -11,6 +11,12 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.108.4",
+    "@tinyhttp/app": "^3.0.14",
+    "@tinyhttp/cors": "^2.0.1",
+    "axios": "^1.21.1",
+    "lowdb": "^7.0.1",
+    "milliparsec": "^5.1.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
